@@ -6,6 +6,8 @@ import { displayName } from "@/lib/format";
 import type { LeaderboardRow, Match, Prediction, Profile } from "@/lib/types";
 import { Trophy } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function DashboardPage() {
   const supabase = await createClient();
   const {

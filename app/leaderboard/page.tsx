@@ -3,6 +3,8 @@ import { createClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/format";
 import type { LeaderboardRow } from "@/lib/types";
 
+export const dynamic = "force-dynamic";
+
 export default async function LeaderboardPage() {
   const supabase = await createClient();
   const { data: rows } = await supabase

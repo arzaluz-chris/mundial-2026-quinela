@@ -8,6 +8,8 @@ import { canViewCommunityPredictions } from "@/lib/scoring";
 import { displayName, formatMatchDate, getTeamAbbreviation } from "@/lib/format";
 import type { Match, Prediction, PredictionWithProfile } from "@/lib/types";
 
+export const dynamic = "force-dynamic";
+
 export default async function MatchDetailsPage({
   params,
   searchParams
