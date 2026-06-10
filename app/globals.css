@@ -7,8 +7,11 @@
 }
 
 body {
-  background: #f7f9f2;
-  color: #14213d;
+  background-color: #f8fafc; /* slate-50 */
+  background-image: radial-gradient(circle at 15% 50%, rgba(214, 243, 106, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(14, 95, 71, 0.05), transparent 25%);
+  background-attachment: fixed;
+  color: #0f172a; /* slate-900 */
 }
 
 input,
@@ -18,21 +21,25 @@ button {
 }
 
 .field {
-  @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-pitch focus:ring-2 focus:ring-pitch/20;
+  @apply w-full rounded-xl border border-slate-200 bg-white/70 px-4 py-3 text-sm outline-none backdrop-blur-sm transition-all focus:border-pitch focus:bg-white focus:ring-4 focus:ring-pitch/10;
 }
 
 .btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-50 active:scale-[0.98];
 }
 
 .btn-primary {
-  @apply bg-pitch text-white hover:bg-pitch/90;
+  @apply bg-pitch text-white shadow-md hover:bg-pitchDark hover:shadow-lg hover:-translate-y-0.5;
 }
 
 .btn-secondary {
-  @apply border border-slate-300 bg-white text-ink hover:bg-slate-50;
+  @apply border border-slate-200 bg-white text-ink shadow-sm hover:border-slate-300 hover:bg-slate-50 hover:shadow;
 }
 
 .panel {
-  @apply rounded-lg border border-slate-200 bg-white shadow-soft;
+  @apply rounded-2xl border border-white/40 bg-white/60 p-6 shadow-glass backdrop-blur-xl transition-all;
+}
+
+.panel-hover {
+  @apply hover:border-white/60 hover:bg-white/80 hover:shadow-soft hover:-translate-y-1;
 }

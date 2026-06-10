@@ -22,16 +22,22 @@ export async function signIn(formData: FormData) {
   redirect(next);
 }
 
+import { headers } from "next/headers";
+
 export async function signUp(formData: FormData) {
   const supabase = await createClient();
   const email = getString(formData, "email");
   const password = getString(formData, "password");
   const displayName = getString(formData, "display_name");
 
+  const headersList = await headers();
+  const origin = headersList.get("origin") || process.env.NEXT_PUBLIC_SITE_URL;
+
   const { error } = await supabase.auth.signUp({
     email,
     password,
     options: {
+      emailRedirectTo: `${origin}/auth/callback?next=/dashboard`,
       data: {
         display_name: displayName
       }
