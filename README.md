@@ -1,4 +1,6 @@
-# Quiniela Mundial 2026
+# Mundial 2026 Quiniela
+
+Quinela para el Mundial 2026 de la FIFA.
 
 Aplicacion privada para una quiniela de la Copa Mundial FIFA 2026. Incluye auth con Supabase, predicciones bloqueadas al kickoff, visibilidad comunitaria despues del inicio de cada partido, scoring automatico y leaderboard.
 
@@ -35,6 +37,13 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 ```bash
 supabase start
 supabase db reset
+```
+
+Para aplicar al proyecto remoto vinculado:
+
+```bash
+supabase db push
+supabase db query --linked --file supabase/seed/seed.sql
 ```
 
 5. Corre la app:
